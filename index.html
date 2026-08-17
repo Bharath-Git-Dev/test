@@ -62,11 +62,9 @@
         Arial,
         sans-serif;
 
-      background-color:
-        var(--cream);
+      background-color: var(--cream);
 
-      color:
-        var(--text-dark);
+      color: var(--text-dark);
 
     }
 
@@ -107,8 +105,7 @@
 
     .logo {
 
-      color:
-        var(--cream);
+      color: var(--cream);
 
       font-size: 28px;
 
@@ -134,8 +131,7 @@
 
     .nav-links a {
 
-      color:
-        var(--white);
+      color: var(--white);
 
       text-decoration: none;
 
@@ -143,8 +139,7 @@
 
       font-weight: 500;
 
-      transition:
-        0.3s ease;
+      transition: 0.3s ease;
 
     }
 
@@ -165,8 +160,7 @@
 
       width: 100%;
 
-      padding:
-        40px 7%;
+      padding: 40px 7%;
 
       background-color:
         var(--cream);
@@ -199,25 +193,22 @@
 
 
     /* ==================================================
-       YOUTUBE VIDEO
+       HERO VIDEO
        ================================================== */
 
     .hero-video {
 
       position: absolute;
 
-      top: 50%;
+      top: 0;
 
-      left: 50%;
+      left: 0;
 
       width: 100%;
 
       height: 100%;
 
-      transform:
-        translate(-50%, -50%);
-
-      border: none;
+      object-fit: cover;
 
       z-index: 1;
 
@@ -236,13 +227,11 @@
 
       background:
         linear-gradient(
-          rgba(18, 60, 42, 0.30),
-          rgba(18, 60, 42, 0.60)
+          rgba(18, 60, 42, 0.35),
+          rgba(18, 60, 42, 0.65)
         );
 
       z-index: 2;
-
-      pointer-events: none;
 
     }
 
@@ -259,12 +248,9 @@
 
       text-align: center;
 
-      color:
-        var(--white);
+      color: var(--white);
 
       padding: 20px;
-
-      pointer-events: none;
 
     }
 
@@ -295,12 +281,7 @@
 
       font-size: 20px;
 
-      color:
-        var(--cream);
-
-      text-shadow:
-        1px 2px 5px
-        rgba(0, 0, 0, 0.5);
+      color: var(--cream);
 
     }
 
@@ -311,8 +292,7 @@
 
     .craft-section {
 
-      padding:
-        80px 7%;
+      padding: 80px 7%;
 
       background-color:
         var(--white);
@@ -343,8 +323,7 @@
 
     .section-title p {
 
-      color:
-        #557263;
+      color: #557263;
 
       font-size: 17px;
 
@@ -452,8 +431,7 @@
 
     .art-overlay h3 {
 
-      color:
-        var(--white);
+      color: var(--white);
 
       font-size: 27px;
 
@@ -517,8 +495,7 @@
 
     .portfolio-header p {
 
-      color:
-        #557263;
+      color: #557263;
 
       font-size: 17px;
 
@@ -556,8 +533,7 @@
 
       cursor: pointer;
 
-      transition:
-        0.3s ease;
+      transition: 0.3s ease;
 
     }
 
@@ -639,8 +615,7 @@
 
     .connect {
 
-      padding:
-        80px 7%;
+      padding: 80px 7%;
 
       background-color:
         var(--light-green);
@@ -964,38 +939,32 @@
     <ul class="nav-links">
 
       <li>
-
         <a
           href="#home"
           onclick="showHome()"
         >
           Home
         </a>
-
       </li>
 
 
       <li>
-
         <a
           href="#craft"
           onclick="showHome()"
         >
           Out Craft
         </a>
-
       </li>
 
 
       <li>
-
         <a
           href="#connect"
           onclick="showHome()"
         >
           Connect
         </a>
-
       </li>
 
     </ul>
@@ -1011,7 +980,7 @@
 
 
     <!-- ==================================================
-         HERO YOUTUBE VIDEO
+         HERO VIDEO
          ================================================== -->
 
     <section
@@ -1022,14 +991,24 @@
       <div class="hero-image">
 
 
-        <iframe
+        <video
           class="hero-video"
-          src="https://www.youtube.com/embed/r0jbPu-o7iw?autoplay=1&mute=1&loop=1&playlist=r0jbPu-o7iw&controls=1&rel=0"
-          title="Bharath Artz Art Video"
-          frameborder="0"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+
+          <source
+            src="videos/art-video.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not
+          support HTML5 video.
+
+        </video>
 
 
         <div class="hero-overlay"></div>
@@ -1079,9 +1058,7 @@
       <div class="art-grid">
 
 
-        <!-- ==================================================
-             QUILLING
-             ================================================== -->
+        <!-- QUILLING -->
 
         <div
           class="art-card"
@@ -1104,9 +1081,7 @@
         </div>
 
 
-        <!-- ==================================================
-             DRAWING
-             ================================================== -->
+        <!-- DRAWING -->
 
         <div
           class="art-card"
@@ -1129,9 +1104,7 @@
         </div>
 
 
-        <!-- ==================================================
-             ACRYLIC ART
-             ================================================== -->
+        <!-- ACRYLIC -->
 
         <div
           class="art-card"
@@ -1154,9 +1127,7 @@
         </div>
 
 
-        <!-- ==================================================
-             CHARCOAL ART
-             ================================================== -->
+        <!-- CHARCOAL -->
 
         <div
           class="art-card"
@@ -1178,7 +1149,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -1192,7 +1162,6 @@
       class="connect"
       id="connect"
     >
-
 
       <h2>
         Get In Touch
@@ -1216,9 +1185,7 @@
       <div class="social-icons">
 
 
-        <!-- ==================================================
-             EMAIL
-             ================================================== -->
+        <!-- EMAIL -->
 
         <a
           href="mailto:your@email.com"
@@ -1253,9 +1220,7 @@
         </a>
 
 
-        <!-- ==================================================
-             INSTAGRAM
-             ================================================== -->
+        <!-- INSTAGRAM -->
 
         <a
           href="https://instagram.com"
@@ -1297,11 +1262,9 @@
 
         </a>
 
-
       </div>
 
     </section>
-
 
   </main>
 
@@ -1314,7 +1277,6 @@
     class="portfolio"
     id="quillingPortfolio"
   >
-
 
     <button
       class="back-button"
@@ -1339,66 +1301,47 @@
 
     <div class="portfolio-grid">
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-1.jpg"
           alt="Quilling artwork 1"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-2.jpg"
           alt="Quilling artwork 2"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-3.jpg"
           alt="Quilling artwork 3"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-4.jpg"
           alt="Quilling artwork 4"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-5.jpg"
           alt="Quilling artwork 5"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/quilling-6.jpg"
           alt="Quilling artwork 6"
         >
-
       </div>
-
 
     </div>
 
@@ -1413,7 +1356,6 @@
     class="portfolio"
     id="drawingPortfolio"
   >
-
 
     <button
       class="back-button"
@@ -1438,66 +1380,47 @@
 
     <div class="portfolio-grid">
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-1.jpg"
           alt="Drawing artwork 1"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-2.jpg"
           alt="Drawing artwork 2"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-3.jpg"
           alt="Drawing artwork 3"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-4.jpg"
           alt="Drawing artwork 4"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-5.jpg"
           alt="Drawing artwork 5"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/drawing-6.jpg"
           alt="Drawing artwork 6"
         >
-
       </div>
-
 
     </div>
 
@@ -1512,7 +1435,6 @@
     class="portfolio"
     id="acrylicPortfolio"
   >
-
 
     <button
       class="back-button"
@@ -1537,66 +1459,47 @@
 
     <div class="portfolio-grid">
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-1.jpg"
           alt="Acrylic artwork 1"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-2.jpg"
           alt="Acrylic artwork 2"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-3.jpg"
           alt="Acrylic artwork 3"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-4.jpg"
           alt="Acrylic artwork 4"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-5.jpg"
           alt="Acrylic artwork 5"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/acrylic-6.jpg"
           alt="Acrylic artwork 6"
         >
-
       </div>
-
 
     </div>
 
@@ -1611,7 +1514,6 @@
     class="portfolio"
     id="charcoalPortfolio"
   >
-
 
     <button
       class="back-button"
@@ -1636,66 +1538,47 @@
 
     <div class="portfolio-grid">
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-1.jpg"
           alt="Charcoal artwork 1"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-2.jpg"
           alt="Charcoal artwork 2"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-3.jpg"
           alt="Charcoal artwork 3"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-4.jpg"
           alt="Charcoal artwork 4"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-5.jpg"
           alt="Charcoal artwork 5"
         >
-
       </div>
 
-
       <div class="portfolio-item">
-
         <img
           src="images/charcoal-6.jpg"
           alt="Charcoal artwork 6"
         >
-
       </div>
-
 
     </div>
 
@@ -1728,14 +1611,14 @@
     function openPortfolio(category) {
 
 
-      /* Hide homepage */
+      // Hide homepage
 
       document
         .getElementById("homeContent")
         .style.display = "none";
 
 
-      /* Hide every portfolio */
+      // Hide every portfolio
 
       const portfolios =
         document.querySelectorAll(
@@ -1753,7 +1636,7 @@
       );
 
 
-      /* Find selected portfolio */
+      // Find selected portfolio
 
       const selectedPortfolio =
         document.getElementById(
@@ -1761,7 +1644,7 @@
         );
 
 
-      /* Show selected portfolio */
+      // Show selected portfolio
 
       if (selectedPortfolio) {
 
@@ -1772,7 +1655,7 @@
       }
 
 
-      /* Scroll to top */
+      // Scroll to top
 
       window.scrollTo({
 
@@ -1792,14 +1675,14 @@
     function showHome() {
 
 
-      /* Show homepage */
+      // Show homepage
 
       document
         .getElementById("homeContent")
         .style.display = "block";
 
 
-      /* Hide portfolios */
+      // Hide portfolios
 
       const portfolios =
         document.querySelectorAll(
@@ -1817,7 +1700,7 @@
       );
 
 
-      /* Scroll to top */
+      // Scroll home
 
       window.scrollTo({
 
