@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bharathartzz | Art & Creativity</title>
+
+  <style>
+    /* =========================
+       COLOR PALETTE
+       ========================= */
+    :root {
+      --dark-green: #123c2a;
+      --green: #2f6b4f;
+      --light-green: #b8d8c0;
+      --cream: #f7f1df;
+      --white: #ffffff;
+      --text-dark: #173528;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+    }
+
+    /* =========================
+       NAVIGATION BAR
+       ========================= */
+    nav {
+      width: 100%;
+      height: 75px;
+      background-color: var(--dark-green);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      color: var(--cream);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--light-green);
+    }
+
+    /* =========================
+       HERO SECTION
+       ========================= */
+    .hero {
+      width: 100%;
+      padding: 40px 7%;
+      background-color: var(--cream);
+    }
+
+    .hero-image {
+      height: 550px;
+      width: 100%;
+      border-radius: 20px;
+      background-image:
+        linear-gradient(
+          rgba(18, 60, 42, 0.45),
+          rgba(18, 60, 42, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1800&q=85");
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      color: var(--white);
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 20px;
+      color: var(--cream);
+    }
+
+    /* =========================
+       CRAFT SECTION
+       ========================= */
+    .craft-section {
+      padding: 80px 7%;
+      background-color: var(--white);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-green);
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #557263;
+      font-size: 17px;
+    }
+
+    /* =========================
+       ART CARDS
+       ========================= */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .art-card {
+      position: relative;
+      height: 390px;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(18, 60, 42, 0.15);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(18, 60, 42, 0.25);
+    }
+
+    .art-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .art-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .art-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(18, 60, 42, 0.15),
+          rgba(18, 60, 42, 0.8)
+        );
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 25px;
+    }
+
+    .art-overlay h3 {
+      color: var(--white);
+      font-size: 27px;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* =========================
+       ABOUT / CONNECT SECTION
+       ========================= */
+    .connect {
+      padding: 80px 7%;
+      background-color: var(--light-green);
+      text-align: center;
+    }
+
+    .connect h2 {
+      color: var(--dark-green);
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .connect p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      font-size: 17px;
+    }
+
+    .connect-button {
+      display: inline-block;
+      padding: 13px 30px;
+      background-color: var(--dark-green);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .connect-button:hover {
+      background-color: var(--green);
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      background-color: var(--dark-green);
+      color: var(--cream);
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       MOBILE RESPONSIVE
+       ========================= */
+    @media (max-width: 900px) {
+      .art-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-image {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        height: auto;
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 20px 5%;
+      }
+
+      .hero-image {
+        height: 420px;
+        border-radius: 15px;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .craft-section {
+        padding: 60px 5%;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .art-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .art-card {
+        height: 400px;
+      }
+
+      .connect {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+  <nav>
+    <div class="logo">Bharathartzz</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#craft">Out Craft</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =========================
+       HOME / HERO
+       ========================= -->
+  <section class="hero" id="home">
+
+    <div class="hero-image">
+
+      <div class="hero-content">
+        <h1>Welcome to Bharath Artz</h1>
+        <p>Where creativity comes to life.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ART CATEGORIES
+       ========================= -->
+  <section class="craft-section" id="craft">
+
+    <div class="section-title">
+      <h2>Our Creative World</h2>
+      <p>Explore different forms of art and creativity</p>
+    </div>
+
+    <div class="art-grid">
+
+      <!-- QUILLING -->
+      <div class="art-card">
+        <img
+          src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=85"
+          alt="Quilling Art"
+        />
+
+        <div class="art-overlay">
+          <h3>Quilling</h3>
+        </div>
+      </div>
+
+
+      <!-- DRAWING -->
+      <div class="art-card">
+        <img
+          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+          alt="Drawing Art"
+        />
+
+        <div class="art-overlay">
+          <h3>Drawing</h3>
+        </div>
+      </div>
+
+
+      <!-- ACRYLIC ART -->
+      <div class="art-card">
+        <img
+          src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=85"
+          alt="Acrylic Art"
+        />
+
+        <div class="art-overlay">
+          <h3>Acrylic Art</h3>
+        </div>
+      </div>
+
+
+      <!-- CHARCOAL ART -->
+      <div class="art-card">
+        <img
+          src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+          alt="Charcoal Art"
+        />
+
+        <div class="art-overlay">
+          <h3>Charcoal Art</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONNECT
+       ========================= -->
+  <section class="connect" id="connect">
+
+    <h2>Connect With Bharathartzz</h2>
+
+    <p>
+      Art is not just about creating something beautiful.
+      It is about expressing ideas, emotions and imagination.
+      Follow Bharathartzz and explore the world of handmade art.
+    </p>
+
+    <a href="mailto:your@email.com" class="connect-button">
+      Get In Touch
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
+    © 2026 Bharathartzz. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
