@@ -1,539 +1,930 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bharathartzz | Art & Creativity</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Bharathartzz | Art & Creativity
+  </title>
+
 
   <style>
-    /* =========================
-       COLORS
-       ========================= */
+
+    /* ==================================================
+       COLOR PALETTE
+       ================================================== */
+
     :root {
+
       --dark-green: #123c2a;
+
       --green: #2f6b4f;
+
       --light-green: #b8d8c0;
+
       --cream: #f7f1df;
+
       --white: #ffffff;
+
       --text-dark: #173528;
+
     }
+
+
+    /* ==================================================
+       GLOBAL
+       ================================================== */
 
     * {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
       scroll-behavior: smooth;
+
     }
+
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
+
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       background-color: var(--cream);
+
       color: var(--text-dark);
+
     }
 
-    /* =========================
+
+    /* ==================================================
        NAVIGATION
-       ========================= */
+       ================================================== */
 
     nav {
+
       width: 100%;
+
       min-height: 75px;
-      background-color: var(--dark-green);
+
+      background-color:
+        var(--dark-green);
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       padding: 0 7%;
 
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
 
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+      box-shadow:
+        0 3px 15px
+        rgba(0, 0, 0, 0.15);
+
     }
+
 
     .logo {
+
       color: var(--cream);
+
       font-size: 28px;
+
       font-weight: 700;
+
       letter-spacing: 1px;
+
       cursor: pointer;
+
     }
+
 
     .nav-links {
+
       display: flex;
+
       gap: 35px;
+
       list-style: none;
+
     }
+
 
     .nav-links a {
+
       color: var(--white);
+
       text-decoration: none;
+
       font-size: 16px;
+
       font-weight: 500;
+
       transition: 0.3s ease;
+
     }
+
 
     .nav-links a:hover {
-      color: var(--light-green);
+
+      color:
+        var(--light-green);
+
     }
 
-    /* =========================
-       HOME
-       ========================= */
+
+    /* ==================================================
+       HOME HERO
+       ================================================== */
 
     .hero {
+
       width: 100%;
+
       padding: 40px 7%;
-      background-color: var(--cream);
+
+      background-color:
+        var(--cream);
+
     }
 
+
     .hero-image {
-      height: 550px;
+
       width: 100%;
+
+      height: 550px;
+
+      position: relative;
+
+      overflow: hidden;
 
       border-radius: 20px;
 
-      background-image:
-        linear-gradient(
-          rgba(18, 60, 42, 0.45),
-          rgba(18, 60, 42, 0.55)
-        ),
-        url("https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1800&q=85");
-
-      background-size: cover;
-      background-position: center;
+      background-color:
+        var(--dark-green);
 
       display: flex;
-      justify-content: center;
+
       align-items: center;
 
-      text-align: center;
-      overflow: hidden;
+      justify-content: center;
+
     }
+
+
+    /* ==================================================
+       HERO VIDEO
+       ================================================== */
+
+    .hero-video {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      z-index: 1;
+
+    }
+
+
+    /* ==================================================
+       VIDEO OVERLAY
+       ================================================== */
+
+    .hero-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(18, 60, 42, 0.35),
+          rgba(18, 60, 42, 0.65)
+        );
+
+      z-index: 2;
+
+    }
+
+
+    /* ==================================================
+       HERO TEXT
+       ================================================== */
 
     .hero-content {
+
+      position: relative;
+
+      z-index: 3;
+
+      text-align: center;
+
       color: var(--white);
+
       padding: 20px;
+
     }
+
 
     .hero-content h1 {
-      font-size: clamp(38px, 6vw, 72px);
+
+      font-size:
+        clamp(
+          38px,
+          6vw,
+          72px
+        );
+
       font-weight: 700;
+
       letter-spacing: 1px;
 
-      text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+      text-shadow:
+        2px 3px 10px
+        rgba(0, 0, 0, 0.5);
+
     }
+
 
     .hero-content p {
+
       margin-top: 15px;
+
       font-size: 20px;
+
       color: var(--cream);
+
     }
 
-    /* =========================
-       CATEGORIES
-       ========================= */
+
+    /* ==================================================
+       CRAFT SECTION
+       ================================================== */
 
     .craft-section {
+
       padding: 80px 7%;
-      background-color: var(--white);
+
+      background-color:
+        var(--white);
+
     }
+
 
     .section-title {
+
       text-align: center;
+
       margin-bottom: 50px;
+
     }
+
 
     .section-title h2 {
-      color: var(--dark-green);
+
+      color:
+        var(--dark-green);
+
       font-size: 40px;
+
       margin-bottom: 12px;
+
     }
+
 
     .section-title p {
+
       color: #557263;
+
       font-size: 17px;
+
     }
 
-    /* =========================
-       ART CARDS
-       ========================= */
+
+    /* ==================================================
+       CATEGORY GRID
+       ================================================== */
 
     .art-grid {
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 25px;
+
     }
 
+
     .art-card {
+
       position: relative;
+
       height: 390px;
 
       border-radius: 18px;
+
       overflow: hidden;
 
       cursor: pointer;
 
-      box-shadow: 0 8px 25px rgba(18, 60, 42, 0.15);
+      box-shadow:
+        0 8px 25px
+        rgba(18, 60, 42, 0.15);
 
       transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
+
     }
+
 
     .art-card:hover {
-      transform: translateY(-10px);
+
+      transform:
+        translateY(-10px);
 
       box-shadow:
-        0 15px 35px rgba(18, 60, 42, 0.25);
+        0 15px 35px
+        rgba(18, 60, 42, 0.25);
+
     }
 
+
     .art-card img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
+
       display: block;
 
-      transition: transform 0.5s ease;
+      transition:
+        transform 0.5s ease;
+
     }
+
 
     .art-card:hover img {
-      transform: scale(1.08);
+
+      transform:
+        scale(1.08);
+
     }
 
+
     .art-overlay {
+
       position: absolute;
+
       inset: 0;
 
       background:
         linear-gradient(
           to bottom,
           rgba(18, 60, 42, 0.15),
-          rgba(18, 60, 42, 0.8)
+          rgba(18, 60, 42, 0.82)
         );
 
       display: flex;
+
       align-items: flex-start;
+
       justify-content: center;
 
       padding-top: 25px;
+
     }
 
+
     .art-overlay h3 {
+
       color: var(--white);
+
       font-size: 27px;
+
       font-weight: 600;
 
       text-align: center;
 
       text-shadow:
-        1px 2px 6px rgba(0, 0, 0, 0.5);
+        1px 2px 6px
+        rgba(0, 0, 0, 0.5);
+
     }
 
-    /* =========================
-       PORTFOLIO PAGE
-       ========================= */
+
+    /* ==================================================
+       PORTFOLIO
+       ================================================== */
 
     .portfolio {
+
       display: none;
 
       min-height: 100vh;
 
-      padding: 60px 7% 80px;
+      padding:
+        60px 7% 80px;
 
-      background-color: var(--cream);
+      background-color:
+        var(--cream);
+
     }
+
 
     .portfolio.active {
+
       display: block;
+
     }
+
 
     .portfolio-header {
+
       text-align: center;
+
       margin-bottom: 45px;
+
     }
+
 
     .portfolio-header h2 {
-      color: var(--dark-green);
+
+      color:
+        var(--dark-green);
+
       font-size: 45px;
+
       margin-bottom: 12px;
+
     }
+
 
     .portfolio-header p {
+
       color: #557263;
+
       font-size: 17px;
+
     }
 
-    /* Back button */
+
+    /* ==================================================
+       BACK BUTTON
+       ================================================== */
 
     .back-button {
+
       display: inline-block;
 
       margin-bottom: 35px;
 
-      padding: 10px 22px;
+      padding:
+        10px 22px;
 
-      border: 2px solid var(--dark-green);
+      border:
+        2px solid
+        var(--dark-green);
+
       border-radius: 30px;
 
-      color: var(--dark-green);
-      background-color: transparent;
+      color:
+        var(--dark-green);
+
+      background-color:
+        transparent;
 
       font-size: 15px;
+
       font-weight: 600;
 
       cursor: pointer;
 
       transition: 0.3s ease;
+
     }
+
 
     .back-button:hover {
-      background-color: var(--dark-green);
-      color: var(--white);
+
+      background-color:
+        var(--dark-green);
+
+      color:
+        var(--white);
+
     }
 
-    /* Portfolio images */
+
+    /* ==================================================
+       PORTFOLIO GRID
+       ================================================== */
 
     .portfolio-grid {
+
       display: grid;
 
       grid-template-columns:
         repeat(3, 1fr);
 
       gap: 25px;
+
     }
 
+
     .portfolio-item {
+
       width: 100%;
+
       height: 350px;
 
       border-radius: 16px;
+
       overflow: hidden;
 
-      background-color: var(--white);
+      background-color:
+        var(--white);
 
       box-shadow:
-        0 7px 20px rgba(18, 60, 42, 0.15);
+        0 7px 20px
+        rgba(18, 60, 42, 0.15);
+
     }
 
+
     .portfolio-item img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
 
       display: block;
 
-      transition: transform 0.5s ease;
+      transition:
+        transform 0.5s ease;
+
     }
+
 
     .portfolio-item:hover img {
-      transform: scale(1.05);
+
+      transform:
+        scale(1.05);
+
     }
 
-    /* =========================
+
+    /* ==================================================
        CONNECT
-       ========================= */
+       ================================================== */
 
     .connect {
+
       padding: 80px 7%;
 
-      background-color: var(--light-green);
+      background-color:
+        var(--light-green);
 
       text-align: center;
+
     }
+
 
     .connect h2 {
-      color: var(--dark-green);
+
+      color:
+        var(--dark-green);
+
       font-size: 38px;
+
       margin-bottom: 15px;
+
     }
 
+
     .connect p {
+
       max-width: 650px;
 
-      margin: 0 auto 30px;
+      margin:
+        0 auto 30px;
 
       line-height: 1.7;
 
-      color: var(--text-dark);
+      color:
+        var(--text-dark);
 
       font-size: 17px;
+
     }
 
-    /* Social icons */
+
+    /* ==================================================
+       SOCIAL ICONS
+       ================================================== */
 
     .social-icons {
+
       display: flex;
 
       justify-content: center;
+
       align-items: center;
 
       gap: 25px;
+
     }
 
+
     .social-icon {
+
       width: 55px;
+
       height: 55px;
 
       border-radius: 50%;
 
-      background-color: var(--dark-green);
+      background-color:
+        var(--dark-green);
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      color: var(--white);
+      color:
+        var(--white);
 
       text-decoration: none;
 
       transition:
         transform 0.3s ease,
         background-color 0.3s ease;
+
     }
+
 
     .social-icon:hover {
-      transform: translateY(-5px);
 
-      background-color: var(--green);
+      transform:
+        translateY(-5px);
+
+      background-color:
+        var(--green);
+
     }
 
+
     .social-icon svg {
+
       width: 27px;
+
       height: 27px;
 
       fill: currentColor;
+
     }
 
-    /* =========================
+
+    /* ==================================================
        FOOTER
-       ========================= */
+       ================================================== */
 
     footer {
-      background-color: var(--dark-green);
 
-      color: var(--cream);
+      background-color:
+        var(--dark-green);
+
+      color:
+        var(--cream);
 
       text-align: center;
 
       padding: 25px;
 
       font-size: 14px;
+
     }
 
-    /* =========================
-       RESPONSIVE
-       ========================= */
+
+    /* ==================================================
+       TABLET
+       ================================================== */
 
     @media (max-width: 1000px) {
 
       .art-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
       }
+
 
       .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
       }
 
-      .hero-image {
-        height: 500px;
-      }
     }
+
+
+    /* ==================================================
+       MOBILE
+       ================================================== */
 
     @media (max-width: 600px) {
 
       nav {
-        padding: 18px 5%;
 
-        flex-direction: column;
+        padding:
+          18px 5%;
+
+        flex-direction:
+          column;
 
         gap: 15px;
+
       }
+
 
       .logo {
+
         font-size: 25px;
+
       }
+
 
       .nav-links {
+
         gap: 20px;
+
       }
+
 
       .nav-links a {
+
         font-size: 14px;
+
       }
+
 
       .hero {
-        padding: 20px 5%;
+
+        padding:
+          20px 5%;
+
       }
 
+
       .hero-image {
+
         height: 420px;
 
         border-radius: 15px;
+
       }
+
 
       .hero-content h1 {
+
         font-size: 40px;
+
       }
+
 
       .hero-content p {
+
         font-size: 16px;
+
       }
+
 
       .craft-section {
-        padding: 60px 5%;
+
+        padding:
+          60px 5%;
+
       }
+
 
       .section-title h2 {
+
         font-size: 32px;
+
       }
+
 
       .art-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
+
 
       .art-card {
+
         height: 400px;
+
       }
+
 
       .portfolio {
-        padding: 45px 5% 60px;
+
+        padding:
+          45px 5% 60px;
+
       }
+
 
       .portfolio-header h2 {
+
         font-size: 34px;
+
       }
+
 
       .portfolio-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
+
 
       .portfolio-item {
+
         height: 400px;
+
       }
+
 
       .connect {
-        padding: 60px 5%;
+
+        padding:
+          60px 5%;
+
       }
 
+
       .connect h2 {
+
         font-size: 32px;
+
       }
+
     }
+
   </style>
+
 </head>
 
 
 <body>
 
-  <!-- =========================
+
+  <!-- ==================================================
        NAVIGATION
-       ========================= -->
+       ================================================== -->
 
   <nav>
 
@@ -544,22 +935,34 @@
       Bharathartzz
     </div>
 
+
     <ul class="nav-links">
 
       <li>
-        <a href="#home" onclick="showHome()">
+        <a
+          href="#home"
+          onclick="showHome()"
+        >
           Home
         </a>
       </li>
 
+
       <li>
-        <a href="#craft" onclick="showHome()">
+        <a
+          href="#craft"
+          onclick="showHome()"
+        >
           Out Craft
         </a>
       </li>
 
+
       <li>
-        <a href="#connect" onclick="showHome()">
+        <a
+          href="#connect"
+          onclick="showHome()"
+        >
           Connect
         </a>
       </li>
@@ -569,17 +972,47 @@
   </nav>
 
 
-  <!-- =========================
-       MAIN HOME CONTENT
-       ========================= -->
+  <!-- ==================================================
+       HOME
+       ================================================== -->
 
   <main id="homeContent">
 
-    <!-- HERO -->
 
-    <section class="hero" id="home">
+    <!-- ==================================================
+         HERO VIDEO
+         ================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
 
       <div class="hero-image">
+
+
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+
+          <source
+            src="videos/art-video.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not
+          support HTML5 video.
+
+        </video>
+
+
+        <div class="hero-overlay"></div>
+
 
         <div class="hero-content">
 
@@ -598,12 +1031,15 @@
     </section>
 
 
-    <!-- ART CATEGORIES -->
+    <!-- ==================================================
+         ART CATEGORIES
+         ================================================== -->
 
     <section
       class="craft-section"
       id="craft"
     >
+
 
       <div class="section-title">
 
@@ -612,7 +1048,8 @@
         </h2>
 
         <p>
-          Explore different forms of art and creativity
+          Explore different forms
+          of art and creativity
         </p>
 
       </div>
@@ -631,7 +1068,7 @@
           <img
             src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=85"
             alt="Quilling Art"
-          />
+          >
 
           <div class="art-overlay">
 
@@ -654,7 +1091,7 @@
           <img
             src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
             alt="Drawing Art"
-          />
+          >
 
           <div class="art-overlay">
 
@@ -667,7 +1104,7 @@
         </div>
 
 
-        <!-- ACRYLIC ART -->
+        <!-- ACRYLIC -->
 
         <div
           class="art-card"
@@ -677,7 +1114,7 @@
           <img
             src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=85"
             alt="Acrylic Art"
-          />
+          >
 
           <div class="art-overlay">
 
@@ -690,7 +1127,7 @@
         </div>
 
 
-        <!-- CHARCOAL ART -->
+        <!-- CHARCOAL -->
 
         <div
           class="art-card"
@@ -700,7 +1137,7 @@
           <img
             src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
             alt="Charcoal Art"
-          />
+          >
 
           <div class="art-overlay">
 
@@ -717,9 +1154,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- ==================================================
          CONNECT
-         ========================= -->
+         ================================================== -->
 
     <section
       class="connect"
@@ -730,10 +1167,18 @@
         Get In Touch
       </h2>
 
+
       <p>
-        Art is not just about creating something beautiful.
-        It is about expressing ideas, emotions and imagination.
-        Follow Bharathartzz and explore the world of handmade art.
+
+        Art is not just about creating
+        something beautiful.
+
+        It is about expressing ideas,
+        emotions and imagination.
+
+        Follow Bharathartzz and explore
+        the world of handmade art.
+
       </p>
 
 
@@ -745,13 +1190,12 @@
         <a
           href="mailto:your@email.com"
           class="social-icon"
-          aria-label="Email"
           title="Email"
+          aria-label="Email"
         >
 
           <svg
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
 
             <path d="
@@ -769,7 +1213,7 @@
               L12 11
               L20 6
               V8Z
-            " />
+            "/>
 
           </svg>
 
@@ -783,13 +1227,12 @@
           target="_blank"
           rel="noopener noreferrer"
           class="social-icon"
-          aria-label="Instagram"
           title="Instagram"
+          aria-label="Instagram"
         >
 
           <svg
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
 
             <path d="
@@ -813,7 +1256,7 @@
               C16.5 7.05 16.95 7.5 17.5 7.5
               C18.05 7.5 18.5 7.05 18.5 6.5
               C18.5 5.95 18.05 5.5 17.5 5.5Z
-            " />
+            "/>
 
           </svg>
 
@@ -842,6 +1285,7 @@
       ← Back to Categories
     </button>
 
+
     <div class="portfolio-header">
 
       <h2>
@@ -861,42 +1305,42 @@
         <img
           src="images/quilling-1.jpg"
           alt="Quilling artwork 1"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/quilling-2.jpg"
           alt="Quilling artwork 2"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/quilling-3.jpg"
           alt="Quilling artwork 3"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/quilling-4.jpg"
           alt="Quilling artwork 4"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/quilling-5.jpg"
           alt="Quilling artwork 5"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/quilling-6.jpg"
           alt="Quilling artwork 6"
-        />
+        >
       </div>
 
     </div>
@@ -920,6 +1364,7 @@
       ← Back to Categories
     </button>
 
+
     <div class="portfolio-header">
 
       <h2>
@@ -939,42 +1384,42 @@
         <img
           src="images/drawing-1.jpg"
           alt="Drawing artwork 1"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/drawing-2.jpg"
           alt="Drawing artwork 2"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/drawing-3.jpg"
           alt="Drawing artwork 3"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/drawing-4.jpg"
           alt="Drawing artwork 4"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/drawing-5.jpg"
           alt="Drawing artwork 5"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/drawing-6.jpg"
           alt="Drawing artwork 6"
-        />
+        >
       </div>
 
     </div>
@@ -998,6 +1443,7 @@
       ← Back to Categories
     </button>
 
+
     <div class="portfolio-header">
 
       <h2>
@@ -1017,42 +1463,42 @@
         <img
           src="images/acrylic-1.jpg"
           alt="Acrylic artwork 1"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/acrylic-2.jpg"
           alt="Acrylic artwork 2"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/acrylic-3.jpg"
           alt="Acrylic artwork 3"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/acrylic-4.jpg"
           alt="Acrylic artwork 4"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/acrylic-5.jpg"
           alt="Acrylic artwork 5"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/acrylic-6.jpg"
           alt="Acrylic artwork 6"
-        />
+        >
       </div>
 
     </div>
@@ -1076,6 +1522,7 @@
       ← Back to Categories
     </button>
 
+
     <div class="portfolio-header">
 
       <h2>
@@ -1095,42 +1542,42 @@
         <img
           src="images/charcoal-1.jpg"
           alt="Charcoal artwork 1"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/charcoal-2.jpg"
           alt="Charcoal artwork 2"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/charcoal-3.jpg"
           alt="Charcoal artwork 3"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/charcoal-4.jpg"
           alt="Charcoal artwork 4"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/charcoal-5.jpg"
           alt="Charcoal artwork 5"
-        />
+        >
       </div>
 
       <div class="portfolio-item">
         <img
           src="images/charcoal-6.jpg"
           alt="Charcoal artwork 6"
-        />
+        >
       </div>
 
     </div>
@@ -1138,87 +1585,137 @@
   </section>
 
 
-  <!-- =========================
+  <!-- ==================================================
        FOOTER
-       ========================= -->
+       ================================================== -->
 
   <footer>
 
-    © 2026 Bharathartzz. All Rights Reserved.
+    © 2026 Bharathartzz.
+    All Rights Reserved.
 
   </footer>
 
 
-  <!-- =========================
+  <!-- ==================================================
        JAVASCRIPT
-       ========================= -->
+       ================================================== -->
 
   <script>
 
+
+    /* ==================================================
+       OPEN PORTFOLIO
+       ================================================== */
+
     function openPortfolio(category) {
 
-      // Hide home content
-      document.getElementById("homeContent").style.display = "none";
 
-      // Hide all portfolios
+      // Hide homepage
+
+      document
+        .getElementById("homeContent")
+        .style.display = "none";
+
+
+      // Hide every portfolio
+
       const portfolios =
-        document.querySelectorAll(".portfolio");
-
-      portfolios.forEach(function(portfolio) {
-
-        portfolio.classList.remove("active");
-
-      });
+        document.querySelectorAll(
+          ".portfolio"
+        );
 
 
-      // Show selected portfolio
+      portfolios.forEach(
+        function(portfolio) {
+
+          portfolio.classList
+            .remove("active");
+
+        }
+      );
+
+
+      // Find selected portfolio
+
       const selectedPortfolio =
         document.getElementById(
           category + "Portfolio"
         );
 
+
+      // Show selected portfolio
+
       if (selectedPortfolio) {
 
-        selectedPortfolio.classList.add("active");
+        selectedPortfolio
+          .classList
+          .add("active");
 
       }
 
 
       // Scroll to top
+
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
     }
 
+
+    /* ==================================================
+       RETURN HOME
+       ================================================== */
 
     function showHome() {
 
-      // Show home
-      document.getElementById("homeContent").style.display = "block";
+
+      // Show homepage
+
+      document
+        .getElementById("homeContent")
+        .style.display = "block";
 
 
-      // Hide all portfolios
+      // Hide portfolios
+
       const portfolios =
-        document.querySelectorAll(".portfolio");
-
-      portfolios.forEach(function(portfolio) {
-
-        portfolio.classList.remove("active");
-
-      });
+        document.querySelectorAll(
+          ".portfolio"
+        );
 
 
-      // Scroll to top
+      portfolios.forEach(
+        function(portfolio) {
+
+          portfolio.classList
+            .remove("active");
+
+        }
+      );
+
+
+      // Scroll home
+
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
     }
 
+
   </script>
 
+
 </body>
+
 </html>
